@@ -7,6 +7,10 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  homeContainer: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
   logo: {
     maxHeight: 50,
     resizeMode: 'contain',

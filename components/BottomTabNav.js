@@ -15,6 +15,7 @@ export default function BottomTabNav() {
       initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: '#000',
+        headerShown: false,
       }}
       style={styles.BottomTabNav}
     >

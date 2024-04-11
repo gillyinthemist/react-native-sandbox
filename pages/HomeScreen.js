@@ -1,12 +1,12 @@
 import { Text, TouchableOpacity, View } from 'react-native';
 import styles from '../styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import HomeHeaderNav from '../components/HomeHeaderNav';
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Let's GO</Text>
-      </TouchableOpacity>
-    </View>
+    <SafeAreaView style={styles.homeContainer}>
+      <HomeHeaderNav />
+    </SafeAreaView>
   );
 }
