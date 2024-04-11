@@ -11,14 +11,9 @@ import styles from './styles';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
   return (
-    <SafeAreaView style={styles.container}>
-      <NavigationContainer>
-        <Text>Hello</Text>
-        <BottomTabNav />
-      </NavigationContainer>
-    </SafeAreaView>
+    <NavigationContainer>
+      <BottomTabNav />
+    </NavigationContainer>
   );
 }

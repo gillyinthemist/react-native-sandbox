@@ -1,10 +1,12 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Discover from '../pages/Discover';
-import Home from '../pages/Home';
+import HomeScreen from '../pages/HomeScreen';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 
 import { View, Text, TouchableOpacity } from 'react-native';
+import styles from '../styles';
 
 function MyTabBar({ state, descriptors, navigation }) {
   return (
@@ -62,12 +64,41 @@ function MyTabBar({ state, descriptors, navigation }) {
 
 export default function BottomTabNav() {
   return (
+    // <Tab.Navigator
+    //   initialRouteName="Home"
+    //   tabBar={(props) => <MyTabBar {...props} />}
+    // >
+    //   <Tab.Screen name="Home" component={Home} />
+    //   <Tab.Screen name="Discover" component={Discover} />
+    // </Tab.Navigator>
     <Tab.Navigator
       initialRouteName="Home"
-      tabBar={(props) => <MyTabBar {...props} />}
+      screenOptions={{
+        tabBarActiveTintColor: '#e91e63',
+      }}
+      style={styles.BottomTabNav}
     >
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Discover" component={Discover} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Discover"
+        component={Discover}
+        options={{
+          tabBarLabel: 'Updates',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="bell" color={color} size={size} />
+          ),
+          tabBarBadge: 3,
+        }}
+      />
     </Tab.Navigator>
   );
 }
