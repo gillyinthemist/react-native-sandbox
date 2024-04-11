@@ -1,10 +1,12 @@
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import styles from '../styles';
 
 export default function HomeScreen() {
   return (
-    <TouchableOpacity style={styles.button}>
-      <Text style={styles.buttonText}>Let's GO</Text>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Let's GO</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
